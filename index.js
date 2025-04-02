@@ -7,7 +7,8 @@ require('./startap/db')()
 require('./startap/config')()
 require('./startap/prod')(app)
 
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 const server = app.listen(port, () => {
   winston.info(`Example app listening on port ${port}`);
 });
